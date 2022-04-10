@@ -379,6 +379,9 @@ GameObject:
   - component: {fileID: 4034113834248697217}
   - component: {fileID: 4034113834247894433}
   - component: {fileID: 4034113834246797153}
+  - component: {fileID: 2917265481754442589}
+  - component: {fileID: 8487942428501921090}
+  - component: {fileID: 6647708327251079713}
   m_Layer: 0
   m_Name: Infrared Thermometer Button 1
   m_TagString: Untagged
@@ -394,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4034113834248989089}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.011435089, y: 0.28214377, z: 0.07307515}
+  m_LocalPosition: {x: -0.011435089, y: 0.2821438, z: 0.07307515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4034113834248697227}
@@ -449,6 +452,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2917265481754442589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e620bcbf1b86ce419c26315f844cedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &8487942428501921090
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008941455, y: 0.048074067, z: 0.034020253}
+  m_Center: {x: -0.1196784, y: 0.057934478, z: -0.031544674}
+--- !u!95 &6647708327251079713
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de7d12e8fa6d7ed418f1180a364e097e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4034113834248989091
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +591,9 @@ GameObject:
   - component: {fileID: 4034113834248697221}
   - component: {fileID: 4034113834247894437}
   - component: {fileID: 4034113834246797157}
+  - component: {fileID: 810111972607994661}
+  - component: {fileID: 4531617484744292436}
+  - component: {fileID: 722890568512871533}
   m_Layer: 0
   m_Name: Infrared Thermometer Button 3
   m_TagString: Untagged
@@ -614,6 +664,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &810111972607994661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e620bcbf1b86ce419c26315f844cedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4531617484744292436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008941455, y: 0.04807405, z: 0.03392157}
+  m_Center: {x: -0.1196784, y: 0.057934478, z: -0.108969286}
+--- !u!95 &722890568512871533
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989093}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de7d12e8fa6d7ed418f1180a364e097e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4034113834248989095
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +719,9 @@ GameObject:
   - component: {fileID: 4034113834248697223}
   - component: {fileID: 4034113834247894439}
   - component: {fileID: 4034113834246797159}
+  - component: {fileID: 2002222808580491882}
+  - component: {fileID: 6217313173877423261}
+  - component: {fileID: 7381100314821516003}
   m_Layer: 0
   m_Name: Infrared Thermometer Button 2
   m_TagString: Untagged
@@ -695,6 +792,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2002222808580491882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e620bcbf1b86ce419c26315f844cedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &6217313173877423261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989095}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008963728, y: 0.039113786, z: 0.038719356}
+  m_Center: {x: -0.119651124, y: 0.050337687, z: -0.0702323}
+--- !u!95 &7381100314821516003
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de7d12e8fa6d7ed418f1180a364e097e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4034113834248989097
 GameObject:
   m_ObjectHideFlags: 0

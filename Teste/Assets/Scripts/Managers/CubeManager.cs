@@ -11,15 +11,17 @@ namespace LabTest.Cubes {
     public class CubeManager : MonoBehaviour, IClickable {
 
         public enum CubeState {
-            Resting, OnBunsen, MovingToPosition
+            Resting, OnBunsen, MovingToBunsen
         }
 
-        public Transform BunsenHolder;
+        public BunsenController BunsenController;
         public CubeState State;
 
         private Vector3 m_originalPosition;
 
-  
+        public delegate void OnObjectPlacedInBunsen(bool isObjectPlaced);
+        public static event OnObjectPlacedInBunsen onObjectPlacedInBunsen;
+        
         private void Awake() {
             m_originalPosition = transform.position;
         }
@@ -28,28 +30,35 @@ namespace LabTest.Cubes {
             var Sequence = DOTween.Sequence();
             
             switch (State) {
-                case CubeState.MovingToPosition:
+                case CubeState.MovingToBunsen:
                     return;
                 case CubeState.OnBunsen:
-                    State = CubeState.MovingToPosition;
+                    State = CubeState.MovingToBunsen;
                     Sequence.Append(transform.DOMoveX(m_originalPosition.x, 1.0f));
                     Sequence.Append(transform.DOMoveY(m_originalPosition.y, 1.0f));
                     Sequence.OnComplete(() => {
                         transform.DOMoveZ(m_originalPosition.z, 0.1f);
                         State = CubeState.Resting;
+                        onObjectPlacedInBunsen?.Invoke(false);
                     });
                     break;
                 default:
+                    //maybe show a warning message?
+                    if (BunsenController.IsBunsenOccupied) return;
                     
-                    State = CubeState.MovingToPosition;
-                    Sequence.Append(transform.DOMoveY(BunsenHolder.position.y, 1.0f));
-                    Sequence.Append(transform.DOMoveX(BunsenHolder.position.x, 1.0f));
+                    onObjectPlacedInBunsen?.Invoke(true);
+                    State = CubeState.MovingToBunsen;
+                    var bunsenHolder = BunsenController.ObjectHolder.position;
+                    Sequence.Append(transform.DOMoveY(bunsenHolder.y, 1.0f));
+                    Sequence.Append(transform.DOMoveX(bunsenHolder.x, 1.0f));
                     Sequence.OnComplete(() => {
-                        transform.DOMoveZ(BunsenHolder.position.z, 0.1f);
+                        transform.DOMoveZ(bunsenHolder.z, 0.1f);
                         State = CubeState.OnBunsen;
                     });
                     break;
             }
         }
+
+        public void OnLooseClick() { }
     }
 }

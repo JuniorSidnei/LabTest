@@ -6,5 +6,6 @@ namespace LabTest.Interface {
     
     public interface IClickable {
         void OnClick();
+        void OnLooseClick();
     }
 }

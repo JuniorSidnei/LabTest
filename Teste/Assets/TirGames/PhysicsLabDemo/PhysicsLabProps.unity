@@ -1008,8 +1008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38cb805e1ffc434f93371b19098593b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 8
-  RotationSpeed: 1
+  MovementSpeed: 1.5
+  RotationSpeed: 0.2
 --- !u!114 &808332001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,6 +1247,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870389381}
   m_CullTransparentMesh: 1
+--- !u!114 &980019489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1519697222, guid: 8cab1b51b866f6d418d7bea7ef969da2, type: 3}
+  m_PrefabInstance: {fileID: 8807324295369928191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b614113600c2c4badfca18e317ec42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &988964486 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8416303999443954556, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
@@ -2071,23 +2082,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4034113834248697227, guid: ad1dbeaeffda16d488e473a04667721a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.51502234
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4034113834248697227, guid: ad1dbeaeffda16d488e473a04667721a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.48451215
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4034113834248697227, guid: ad1dbeaeffda16d488e473a04667721a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5150223
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4034113834248697227, guid: ad1dbeaeffda16d488e473a04667721a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.48451227
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4034113834248697227, guid: ad1dbeaeffda16d488e473a04667721a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -86.503
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4034113834248697227, guid: ad1dbeaeffda16d488e473a04667721a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2162,6 +2173,10 @@ PrefabInstance:
       propertyPath: BunsenHolder
       value: 
       objectReference: {fileID: 1560890541}
+    - target: {fileID: 6430699779276866990, guid: 790121385f0c9b946a4cf5c2a15c13c2, type: 3}
+      propertyPath: BunsenController
+      value: 
+      objectReference: {fileID: 980019489}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 790121385f0c9b946a4cf5c2a15c13c2, type: 3}
 --- !u!1001 &8416303999342087674
@@ -2175,6 +2190,10 @@ PrefabInstance:
       propertyPath: BunsenHolder
       value: 
       objectReference: {fileID: 1560890541}
+    - target: {fileID: 8416303999443954545, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
+      propertyPath: BunsenController
+      value: 
+      objectReference: {fileID: 980019489}
     - target: {fileID: 8416303999443954556, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
       propertyPath: m_Name
       value: RedCube
@@ -2232,6 +2251,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1341203733}
     m_Modifications:
+    - target: {fileID: 1519697222, guid: 8cab1b51b866f6d418d7bea7ef969da2, type: 3}
+      propertyPath: ObjectHolder
+      value: 
+      objectReference: {fileID: 1560890541}
     - target: {fileID: 2352877380862215640, guid: 8cab1b51b866f6d418d7bea7ef969da2, type: 3}
       propertyPath: m_IsTrigger
       value: 1
