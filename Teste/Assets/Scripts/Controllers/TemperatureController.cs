@@ -19,8 +19,8 @@ namespace LabTest.Controllers {
         private float m_maxTemperature;
         private float m_heatingConstant;
         private float m_coolingConstant;
-        private bool m_hasInitialHeatTemperature;
-        private bool m_hasInitialColdTemperature;
+        private bool m_hasInitialTemperature;
+        //private bool m_hasInitialColdTemperature;
         private float m_elapsedTime;
         private float m_initialHeatTemperature;
         private const float m_constantEuler = 2.71828f;
@@ -58,27 +58,25 @@ namespace LabTest.Controllers {
         private void Update() {
             if (m_bunsenController.IsBunsenOn) {
                 
-                m_hasInitialColdTemperature = false;
-                if (!m_hasInitialHeatTemperature) {
+                if (!m_hasInitialTemperature) {
                     m_initialHeatTemperature = m_currentTemperatureCelsius;
-                    m_hasInitialHeatTemperature = true;
+                    m_hasInitialTemperature = true;
                     m_elapsedTime = 0;
                 }
-                
+      
                 m_elapsedTime += Time.deltaTime;
-                 var currentTemp = m_initialHeatTemperature + (m_maxTemperature - m_initialHeatTemperature) * (1 - Mathf.Pow(m_constantEuler, m_heatingConstant * m_elapsedTime));
-                 if (currentTemp >= m_maxTemperature) {
+                var currentTemp = m_initialHeatTemperature + (m_maxTemperature - m_initialHeatTemperature) * (1 - Mathf.Pow(m_constantEuler, m_heatingConstant * m_elapsedTime)); 
+                if (currentTemp >= m_maxTemperature) {
                      currentTemp = m_maxTemperature;
-                 }
-
+                }
+                
                 m_currentTemperatureCelsius = currentTemp;
                 m_currentTemperatureFahrenheit = (m_currentTemperatureCelsius * 9/5) + 32;
             } else {
                 
-                m_hasInitialHeatTemperature = false;
-                if (!m_hasInitialColdTemperature) {
+                if (m_hasInitialTemperature) {
                     m_initialHeatTemperature = m_currentTemperatureCelsius;
-                    m_hasInitialColdTemperature = true;
+                    m_hasInitialTemperature = false;
                     m_elapsedTime = 0;
                 }
                 
@@ -87,7 +85,7 @@ namespace LabTest.Controllers {
                 if (currentTemp <= m_minimumTemperature) {
                     currentTemp = m_minimumTemperature;
                 }
-
+                
                 m_currentTemperatureCelsius = currentTemp;
                 m_currentTemperatureFahrenheit = (m_currentTemperatureCelsius * 9/5) + 32;
             }
