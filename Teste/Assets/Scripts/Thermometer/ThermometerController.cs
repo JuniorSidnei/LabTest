@@ -14,20 +14,39 @@ namespace LabTest.Controllers {
         private bool m_isEquipped;
         private BoxCollider m_boxCollider;
 
+        private void OnEnable() {
+            ThermometerTriggerButtonController.onThermometerEnabled += ThermometerEnabled;
+        }
+
+        private void OnDisable() {
+            ThermometerTriggerButtonController.onThermometerEnabled -= ThermometerEnabled;
+        }
+
+        private void ThermometerEnabled(bool enabled) {
+            switch (enabled) {
+                case true:
+                    transform.DOLocalRotate(new Vector3(0, -90, 0), 0.5f);
+                    break;
+                case false:
+                    transform.DOLocalRotate(new Vector3(0, 180, 0), 0.5f);
+                    break;
+            }
+        }
+        
         private void Awake() {
             m_boxCollider = GetComponent<BoxCollider>();
         }
-
+        
         public void OnClick() {
             if (m_isEquipped) return;
             
             m_isEquipped = true;
             m_boxCollider.enabled = false;
             var sequence = DOTween.Sequence();
-            sequence.Append(transform.DOMoveY(1f, 0.5f));
-            sequence.Append(transform.DOLocalRotate(new Vector3(0f, -90, 0f), 0.5f));
+            sequence.Append(transform.DOMoveY(1.0f, 1f));
+            sequence.Append(transform.DORotate(new Vector3(0, 180, 0), 1f));
             transform.SetParent(Camera.transform);
-            sequence.Append(transform.DOLocalMove(new Vector3(0.5f, -0.5f, 1f), 0.5f));
+            sequence.Append(transform.DOLocalMove(new Vector3(0.5f, -0.5f, 1f), 1f));
         }
 
         public void OnLooseClick() { }

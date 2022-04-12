@@ -114,7 +114,7 @@ MonoBehaviour:
   State: 0
   m_initialTemperature: 25
   m_constantCA: -0.0025
-  m_constantCR: -0.001428
+  m_constantCR: -0.0008333
   m_minimumTemperature: 25
   m_maximumTemperature: 200
 --- !u!54 &1789126026

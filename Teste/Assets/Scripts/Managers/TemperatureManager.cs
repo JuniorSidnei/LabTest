@@ -6,9 +6,7 @@ using TMPro;
 using UnityEngine;
 
 namespace LabTest.Managers {
-    
-    
-    
+
     public class TemperatureManager : MonoBehaviour {
         
         public enum TemperatureMode {
@@ -26,33 +24,56 @@ namespace LabTest.Managers {
 
         public TemperatureMode TemperatureStatusMode;
 
+        private bool m_isMaxTemperatureRegistered;
+        
         private void OnEnable() {
-            ThermometerLeftButtonController.onThermometerEnabled += ThermometerEnabled;
-            ThermometerLeftButtonController.onUpdateTemperature += UpdateTemperature;
+            ThermometerTriggerButtonController.onThermometerEnabled += ThermometerEnabled;
+            ThermometerTriggerButtonController.onUpdateTemperature += UpdateTemperature;
+            ThermometerMiddleButtonController.onRegisterMaxTemperature += RegisterMaxTemperature;
+            ThermometerModeController.onChangeTemperatureMode += UpdateTemperatureMode;
         }
 
         private void OnDisable() {
-            ThermometerLeftButtonController.onThermometerEnabled -= ThermometerEnabled;
-            ThermometerLeftButtonController.onUpdateTemperature -= UpdateTemperature;
+            ThermometerTriggerButtonController.onThermometerEnabled -= ThermometerEnabled;
+            ThermometerTriggerButtonController.onUpdateTemperature -= UpdateTemperature;
+            ThermometerMiddleButtonController.onRegisterMaxTemperature -= RegisterMaxTemperature;
+            ThermometerModeController.onChangeTemperatureMode -= UpdateTemperatureMode;
         }
 
         private void Awake() {
             TemperatureStatusMode = TemperatureMode.Celsius;
-            CurrentTemperature.text = string.Format("{0:0.0}", 0.0f);
+            var temperature = string.Format("{0:0.0}", 0.0f);
+            CurrentTemperature.text = temperature;
             CurrentTemperatureMode.text = TemperatureStatusMode == TemperatureMode.Celsius ? "C°" : "F°";
-            MaxTemperature.text = string.Format("{0:0.0}", 0.0f);
+            MaxTemperature.text = string.Format("Max: {0:0.0}", 0.0f);
             CurrentThermomenterTemperatureMode.text = TemperatureStatusMode == TemperatureMode.Celsius ? "C°" : "F°";
-            CurrentThermometerTemperature.text = string.Format("{0}", 0.0f);
-            MaxThermometerTemperature.text = string.Format("{0}", 0.0f);
+            CurrentThermometerTemperature.text = temperature;
+            MaxThermometerTemperature.text = string.Format("Max: {0:0.0}", 0.0f);
         }
 
         private void UpdateTemperature(float currentTemperature) {
-            CurrentTemperature.text = string.Format("{0:0.0}", currentTemperature);
-            CurrentThermometerTemperature.text = string.Format("{0:0.0}", currentTemperature);
+            var temperature = string.Format("{0:0.0}", currentTemperature);
+            CurrentTemperature.text = temperature;
+            CurrentThermometerTemperature.text = temperature;
+
+            if (m_isMaxTemperatureRegistered) return;
+            
+            MaxTemperature.text = string.Format("Max: {0:0.0}", currentTemperature);
+            MaxThermometerTemperature.text = string.Format("Max: {0:0.0}", currentTemperature);
+        }
+
+        private void RegisterMaxTemperature() {
+            m_isMaxTemperatureRegistered = !m_isMaxTemperatureRegistered;
         }
         
         private void ThermometerEnabled(bool enabled) {
             TemperaturePanel.SetActive(enabled);
+        }
+
+        private void UpdateTemperatureMode(TemperatureMode temperatureMode) {
+            TemperatureStatusMode = temperatureMode;
+            CurrentTemperatureMode.text = TemperatureStatusMode == TemperatureMode.Celsius ? "C°" : "F°";
+            CurrentThermomenterTemperatureMode.text = TemperatureStatusMode == TemperatureMode.Celsius ? "C°" : "F°";
         }
     }
     

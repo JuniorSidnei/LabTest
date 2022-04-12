@@ -17,24 +17,38 @@ namespace LabTest.Controllers {
         private float m_initialTemperature;
         private float m_minimumTemperature;
         private float m_maxTemperature;
-        private float m_constantCA;
-        private float m_constantCR;
+        private float m_heatingConstant;
+        private float m_coolingConstant;
         private bool m_hasInitialHeatTemperature;
         private bool m_hasInitialColdTemperature;
         private float m_elapsedTime;
         private float m_initialHeatTemperature;
-        private const float m_constantEuler = 2.71f;
+        private const float m_constantEuler = 2.71828f;
+        private float m_maxTemperatureRegistered;
         private BunsenController m_bunsenController;
 
+        private void OnEnable() {
+            ThermometerMiddleButtonController.onRegisterMaxTemperature += RegisterMaxTemperature;
+        }
+
+        private void OnDisable() {
+            ThermometerMiddleButtonController.onRegisterMaxTemperature += RegisterMaxTemperature;
+        }
+
+        private void RegisterMaxTemperature() {
+            m_maxTemperatureRegistered = 0.0f;
+        }
+        
         public void SetBunsen(BunsenController bunsenController) {
             m_bunsenController = bunsenController;
         }
         
-        public void SetInitialTemperatureAndConstants(float initialTemperature, float constantCA, float constantCR,
+        public void SetInitialTemperatureAndConstants(float initialTemperature, float heatingConstant,
+            float coolingConstant,
             float minimumTemperature, float maximumTemperature) {
             m_initialTemperature = initialTemperature;
-            m_constantCA = constantCA;
-            m_constantCR = constantCR;
+            m_heatingConstant = heatingConstant;
+            m_coolingConstant = coolingConstant;
             m_minimumTemperature = minimumTemperature;
             m_maxTemperature = maximumTemperature;
             m_currentTemperatureCelsius = m_initialTemperature;
@@ -51,7 +65,7 @@ namespace LabTest.Controllers {
                 }
                 
                 m_elapsedTime += Time.deltaTime;
-                var currentTemp = m_initialHeatTemperature + (m_maxTemperature - m_initialHeatTemperature) * (1 - Mathf.Pow(m_constantEuler, m_constantCA * m_elapsedTime));
+                var currentTemp = m_initialHeatTemperature + (m_maxTemperature - m_initialHeatTemperature) * (1 - Mathf.Pow(m_constantEuler, m_heatingConstant * m_elapsedTime));
                 if (currentTemp >= m_maxTemperature) {
                     currentTemp = m_maxTemperature;
                 }
@@ -67,7 +81,7 @@ namespace LabTest.Controllers {
                 }
 
                 m_elapsedTime += Time.deltaTime;
-                var currentTemp = m_initialHeatTemperature + (m_minimumTemperature - m_initialHeatTemperature) * (1 - Mathf.Pow(m_constantEuler, m_constantCR * m_elapsedTime));
+                var currentTemp = m_initialHeatTemperature + (m_minimumTemperature - m_initialHeatTemperature) * (1 - Mathf.Pow(m_constantEuler, m_coolingConstant * m_elapsedTime));
                 if (currentTemp <= m_minimumTemperature) {
                     currentTemp = m_minimumTemperature;
                 }

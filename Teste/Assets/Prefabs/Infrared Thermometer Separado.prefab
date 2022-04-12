@@ -409,7 +409,6 @@ GameObject:
   - component: {fileID: 4034113834248697217}
   - component: {fileID: 4034113834247894433}
   - component: {fileID: 4034113834246797153}
-  - component: {fileID: 2917265481754442589}
   - component: {fileID: 8487942428501921090}
   - component: {fileID: 6647708327251079713}
   m_Layer: 0
@@ -482,18 +481,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2917265481754442589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4034113834248989089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e620bcbf1b86ce419c26315f844cedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &8487942428501921090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -621,7 +608,6 @@ GameObject:
   - component: {fileID: 4034113834248697221}
   - component: {fileID: 4034113834247894437}
   - component: {fileID: 4034113834246797157}
-  - component: {fileID: 810111972607994661}
   - component: {fileID: 4531617484744292436}
   - component: {fileID: 722890568512871533}
   m_Layer: 0
@@ -694,18 +680,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &810111972607994661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4034113834248989093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e620bcbf1b86ce419c26315f844cedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &4531617484744292436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -749,9 +723,9 @@ GameObject:
   - component: {fileID: 4034113834248697223}
   - component: {fileID: 4034113834247894439}
   - component: {fileID: 4034113834246797159}
-  - component: {fileID: 2002222808580491882}
   - component: {fileID: 6217313173877423261}
   - component: {fileID: 7381100314821516003}
+  - component: {fileID: 2160139425492874998}
   m_Layer: 0
   m_Name: Infrared Thermometer Button 2
   m_TagString: Untagged
@@ -822,18 +796,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2002222808580491882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4034113834248989095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e620bcbf1b86ce419c26315f844cedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6217313173877423261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -866,6 +828,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2160139425492874998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7512a58060bd45c4dae7bcdbb1d3645f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4034113834248989097
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,6 +851,9 @@ GameObject:
   - component: {fileID: 4034113834248697225}
   - component: {fileID: 4034113834247894443}
   - component: {fileID: 4034113834246797163}
+  - component: {fileID: 1873577334}
+  - component: {fileID: 1873577336}
+  - component: {fileID: 1873577335}
   m_Layer: 0
   m_Name: Infrared Thermometer Trigger
   m_TagString: Untagged
@@ -947,6 +924,52 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1873577334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.056555294, y: 0.06339139, z: 0.036826752}
+  m_Center: {x: 0.061730806, y: 0.051158115, z: -0.07013113}
+--- !u!95 &1873577336
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989097}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de7d12e8fa6d7ed418f1180a364e097e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1873577335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034113834248989097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e620bcbf1b86ce419c26315f844cedf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThermometerPanel: {fileID: 5254452046412667443}
+  RayOrigin: {fileID: 3276787098036615151}
 --- !u!1 &4034113834248989099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +1034,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f75b9478a6e434081bceebc5b5fa78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThermometerPanel: {fileID: 5254452046412667443}
   Camera: {fileID: 0}
 --- !u!1 &5254452046412667443
 GameObject:
