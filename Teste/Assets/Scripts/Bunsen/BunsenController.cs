@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using LabTest.Cubes;
 using LabTest.Interface;
+using LabTest.Managers;
 using UnityEngine;
 
 namespace LabTest.Controllers {
@@ -44,6 +45,8 @@ namespace LabTest.Controllers {
         }
         
         public void OnClick() {
+            if (!GameManager.Instance.IsEPIEquipped) return;
+            
             if (m_isBunsenOn) { 
                 BunsenEnabled(false);
                 BunsenFire.Stop();

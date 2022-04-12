@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using LabTest.Interface;
+using LabTest.Managers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -38,7 +39,7 @@ namespace LabTest.Controllers {
         }
         
         public void OnClick() {
-            if (m_isEquipped) return;
+            if (m_isEquipped || !GameManager.Instance.IsEPIEquipped) return;
             
             m_isEquipped = true;
             m_boxCollider.enabled = false;

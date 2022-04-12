@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using LabTest.Controllers;
 using LabTest.Interface;
+using LabTest.Managers;
 using UnityEngine;
 
 namespace LabTest.Cubes {
@@ -37,6 +38,8 @@ namespace LabTest.Cubes {
         }
 
         public void OnClick() {
+            if (!GameManager.Instance.IsEPIEquipped) return;
+            
             var Sequence = DOTween.Sequence();
             
             switch (State) {
