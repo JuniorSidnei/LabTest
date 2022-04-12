@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using LabTest.Utils;
@@ -15,6 +16,19 @@ namespace LabTest.Managers {
         private PlayerInput m_playerInput;
         private InputAction m_equipAction;
 
+        private void OnEnable() {
+            MouseClickManager.onFinishIntro += FinishedIntro;
+        }
+        
+        private void OnDisable() {
+            MouseClickManager.onFinishIntro -= FinishedIntro;
+        }
+
+        private void FinishedIntro() {
+            WarningText.gameObject.SetActive(true);
+            EquipText.gameObject.SetActive(true);
+        }
+        
         private void Awake() {
             m_playerInput = GetComponent<PlayerInput>();
             m_equipAction = m_playerInput.actions["Equip"];

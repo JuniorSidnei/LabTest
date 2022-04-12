@@ -14,6 +14,9 @@ namespace LabTest.Managers {
 
         private InputAction m_leftClick;
         private GameObject m_lastObjectSelected;
+
+        public delegate void OnFinishIntro();
+        public static event OnFinishIntro onFinishIntro;
         
         private void Awake() {
             m_camera = GetComponent<Camera>();
@@ -33,5 +36,7 @@ namespace LabTest.Managers {
                 m_lastObjectSelected = null;
             };
         }
+
+        public void OnFinishedIntro() => onFinishIntro?.Invoke();
     }
 }
