@@ -15,7 +15,8 @@ namespace LabTest.Controllers {
         public TemperatureManager.TemperatureMode TemperatureStatusMode;
         
         private Animator m_animator;
-
+        private LineRenderer m_lineRenderer;
+        
         private bool m_isButtonPressed;
         private bool m_isThermometerOn;
         private bool m_isTemperatureUpdated;
@@ -36,6 +37,7 @@ namespace LabTest.Controllers {
         
         private void Awake() {
             m_animator = GetComponent<Animator>();
+            m_lineRenderer = GetComponent<LineRenderer>();
         }
 
         private void FixedUpdate() {
@@ -45,6 +47,8 @@ namespace LabTest.Controllers {
             onThermometerEnabled?.Invoke(true);
             if (!Physics.Raycast(RayOrigin.position, transform.right, out var hit)) return;
             
+            m_lineRenderer.SetPosition(0, RayOrigin.position);
+            m_lineRenderer.SetPosition(1, hit.point);
             var tempController = hit.collider.GetComponent<TemperatureController>();
             if (m_isTemperatureUpdated) return;
             m_isTemperatureUpdated = true;
@@ -60,6 +64,7 @@ namespace LabTest.Controllers {
         public void OnClick() {
             m_isButtonPressed = true;
             m_isThermometerOn = true;
+            m_lineRenderer.positionCount = 2;
             m_animator.SetBool("pressed", m_isButtonPressed);
         }
 
@@ -85,6 +90,7 @@ namespace LabTest.Controllers {
             yield return new WaitForSeconds(15);
             ThermometerPanel.SetActive(false);
             m_isThermometerOn = false;
+            m_lineRenderer.positionCount = 0;
             onThermometerEnabled?.Invoke(false);
         }
     }

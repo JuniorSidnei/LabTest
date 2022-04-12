@@ -38,7 +38,6 @@ namespace LabTest.CameraMovement {
             transform.eulerAngles += new Vector3(0, rotInput.x * RotationSpeed, 0);
             
             var input = m_movement.ReadValue<Vector2>();
-            Debug.Log("input: " + input);
             m_velocity = new Vector3(input.x, 0, input.y) * Time.deltaTime * MovementSpeed;
             transform.Translate(m_velocity);
         }

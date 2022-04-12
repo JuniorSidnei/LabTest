@@ -57,6 +57,7 @@ namespace LabTest.Controllers {
 
         private void Update() {
             if (m_bunsenController.IsBunsenOn) {
+                
                 m_hasInitialColdTemperature = false;
                 if (!m_hasInitialHeatTemperature) {
                     m_initialHeatTemperature = m_currentTemperatureCelsius;
@@ -65,21 +66,22 @@ namespace LabTest.Controllers {
                 }
                 
                 m_elapsedTime += Time.deltaTime;
-                var currentTemp = m_initialHeatTemperature + (m_maxTemperature - m_initialHeatTemperature) * (1 - Mathf.Pow(m_constantEuler, m_heatingConstant * m_elapsedTime));
-                if (currentTemp >= m_maxTemperature) {
-                    currentTemp = m_maxTemperature;
-                }
+                 var currentTemp = m_initialHeatTemperature + (m_maxTemperature - m_initialHeatTemperature) * (1 - Mathf.Pow(m_constantEuler, m_heatingConstant * m_elapsedTime));
+                 if (currentTemp >= m_maxTemperature) {
+                     currentTemp = m_maxTemperature;
+                 }
 
                 m_currentTemperatureCelsius = currentTemp;
                 m_currentTemperatureFahrenheit = (m_currentTemperatureCelsius * 9/5) + 32;
             } else {
+                
                 m_hasInitialHeatTemperature = false;
                 if (!m_hasInitialColdTemperature) {
                     m_initialHeatTemperature = m_currentTemperatureCelsius;
                     m_hasInitialColdTemperature = true;
                     m_elapsedTime = 0;
                 }
-
+                
                 m_elapsedTime += Time.deltaTime;
                 var currentTemp = m_initialHeatTemperature + (m_minimumTemperature - m_initialHeatTemperature) * (1 - Mathf.Pow(m_constantEuler, m_coolingConstant * m_elapsedTime));
                 if (currentTemp <= m_minimumTemperature) {
