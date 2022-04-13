@@ -20,7 +20,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &8416303999443954557
 Transform:
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 74b88e75829d953449631ddbb5c1c7f7, type: 2}
+  - {fileID: 2100000, guid: 1824b275b06ba1d44b8bbbb28dc98b89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   State: 0
   m_initialTemperature: 20
   m_constantCA: -0.001428
-  m_constantCR: 0.0004761
+  m_constantCR: -0.0004761
   m_minimumTemperature: 25
   m_maximumTemperature: 200
 --- !u!54 &988964488
