@@ -3372,8 +3372,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5656576, y: 1.3057301, z: 0.92512274}
-  m_Center: {x: -0.017952442, y: -0.15286529, z: 0.03743863}
+  m_Size: {x: 2.5094376, y: 1.3057301, z: 1.6542869}
+  m_Center: {x: -0.12120104, y: -0.15286529, z: 0.23181272}
 --- !u!114 &2090979512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3662,14 +3662,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1341203733}
     m_Modifications:
-    - target: {fileID: 6430699779276866984, guid: 790121385f0c9b946a4cf5c2a15c13c2, type: 3}
-      propertyPath: m_CastShadows
-      value: 2
+    - target: {fileID: 1789126026, guid: 790121385f0c9b946a4cf5c2a15c13c2, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6430699779276866984, guid: 790121385f0c9b946a4cf5c2a15c13c2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2be7d5224b694324d9ff819a69ad119f, type: 2}
     - target: {fileID: 6430699779276866986, guid: 790121385f0c9b946a4cf5c2a15c13c2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3718,10 +3714,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueCube
       objectReference: {fileID: 0}
-    - target: {fileID: 6430699779276866987, guid: 790121385f0c9b946a4cf5c2a15c13c2, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6430699779276866990, guid: 790121385f0c9b946a4cf5c2a15c13c2, type: 3}
       propertyPath: BunsenController
       value: 
@@ -3735,6 +3727,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1341203733}
     m_Modifications:
+    - target: {fileID: 988964488, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8416303999443954545, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
       propertyPath: BunsenController
       value: 
