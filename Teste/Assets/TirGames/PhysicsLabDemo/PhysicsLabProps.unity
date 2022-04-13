@@ -3736,6 +3736,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1341203733}
     m_Modifications:
     - target: {fileID: 8416303999443954545, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
+      propertyPath: m_constantCR
+      value: -0.0004761
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416303999443954545, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
       propertyPath: BunsenController
       value: 
       objectReference: {fileID: 980019489}
@@ -3814,7 +3818,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1519697222, guid: 8cab1b51b866f6d418d7bea7ef969da2, type: 3}
       propertyPath: EmissionTime
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7684406352716343679, guid: 8cab1b51b866f6d418d7bea7ef969da2, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar

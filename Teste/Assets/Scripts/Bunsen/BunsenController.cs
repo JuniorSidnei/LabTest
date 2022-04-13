@@ -32,12 +32,12 @@ namespace LabTest.Controllers {
         }
 
         private void Update() {
-            if (!m_isBunsenOn) return;
-            
-            m_elapsedTime += Time.deltaTime;
-            var percentAmount = m_elapsedTime / EmissionTime;
-            var emission = BunsenFire.emission;
-            emission.rateOverTime = Mathf.Lerp(0, 50, percentAmount);
+            if (m_isBunsenOn) {
+                AnimateBunsenParticle(0, 50);
+            }
+            else {
+                AnimateBunsenParticle(50, 0);
+            }
         }
 
         private void ObjectPlacedInBunsen(bool isObjectPlaced) {
@@ -49,22 +49,31 @@ namespace LabTest.Controllers {
             
             if (m_isBunsenOn) { 
                 BunsenEnabled(false);
-                BunsenFire.Stop();
-                var emission = BunsenFire.emission;
-                emission.rateOverTime = 0;
                 m_elapsedTime = 0;
                 return;
             }
-            
+
+            m_elapsedTime = 0;
             BunsenEnabled(true);
             BunsenFire.Play();
         }
 
         public void OnLooseClick() { }
 
+        public void OnFinishedClose() {
+            BunsenFire.Stop();
+        }
+
         private void BunsenEnabled(bool enabled) {
             m_isBunsenOn = enabled;
             m_animator.SetBool("bunsen_on", m_isBunsenOn);
+        }
+
+        private void AnimateBunsenParticle(float initial, float final) {
+            m_elapsedTime += Time.deltaTime;
+            var percentAmount = m_elapsedTime / EmissionTime;
+            var emission = BunsenFire.emission;
+            emission.rateOverTime = Mathf.Lerp(initial, final, percentAmount);
         }
     }
 }
