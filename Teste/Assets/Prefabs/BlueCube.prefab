@@ -20,7 +20,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &6430699779276866986
 Transform:
@@ -52,7 +52,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6430699779276866987}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 70a817ad6f8bb6343b19a00e6d644625, type: 2}
+  - {fileID: 2100000, guid: 2be7d5224b694324d9ff819a69ad119f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
   BunsenController: {fileID: 0}
   State: 0
   m_initialTemperature: 25
-  m_constantCA: -0.0025
-  m_constantCR: -0.0008333
+  m_heatingConstant: -0.0025
+  m_coolingConstant: -0.0008333
   m_minimumTemperature: 25
   m_maximumTemperature: 200
 --- !u!54 &1789126026

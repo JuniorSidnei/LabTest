@@ -19,8 +19,8 @@ namespace LabTest.Cubes {
         public CubeState State;
 
         [SerializeField] private float m_initialTemperature;
-        [SerializeField] private float m_constantCA;
-        [SerializeField] private float m_constantCR;
+        [SerializeField] private float m_heatingConstant;
+        [SerializeField] private float m_coolingConstant;
         [SerializeField] private float m_minimumTemperature;
         [SerializeField] private float m_maximumTemperature;
         private Vector3 m_originalPosition;
@@ -34,7 +34,7 @@ namespace LabTest.Cubes {
             m_originalPosition = transform.position;
             m_temperatureController = GetComponent<TemperatureController>();
             m_temperatureController.SetBunsen(BunsenController);
-            m_temperatureController.SetInitialTemperatureAndConstants(m_initialTemperature, m_constantCA, m_constantCR, m_minimumTemperature, m_maximumTemperature);
+            m_temperatureController.SetInitialTemperatureAndConstants(m_initialTemperature, m_heatingConstant, m_coolingConstant, m_minimumTemperature, m_maximumTemperature);
         }
 
         public void OnClick() {

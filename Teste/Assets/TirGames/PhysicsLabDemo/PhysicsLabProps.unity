@@ -3736,32 +3736,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1341203733}
     m_Modifications:
     - target: {fileID: 8416303999443954545, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
-      propertyPath: m_constantCR
-      value: -0.0004761
-      objectReference: {fileID: 0}
-    - target: {fileID: 8416303999443954545, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
       propertyPath: BunsenController
       value: 
       objectReference: {fileID: 980019489}
-    - target: {fileID: 8416303999443954547, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8416303999443954547, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1824b275b06ba1d44b8bbbb28dc98b89, type: 2}
-    - target: {fileID: 8416303999443954547, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 65b6c8586a6772541ad89be96fd3a629, type: 2}
     - target: {fileID: 8416303999443954556, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
       propertyPath: m_Name
       value: RedCube
-      objectReference: {fileID: 0}
-    - target: {fileID: 8416303999443954556, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8416303999443954557, guid: b742c93c1c891544bb201ae36025dc7d, type: 3}
       propertyPath: m_RootOrder

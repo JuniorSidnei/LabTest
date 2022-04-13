@@ -113,8 +113,8 @@ MonoBehaviour:
   BunsenController: {fileID: 0}
   State: 0
   m_initialTemperature: 20
-  m_constantCA: -0.001428
-  m_constantCR: -0.0004761
+  m_heatingConstant: -0.001428
+  m_coolingConstant: -0.0004761
   m_minimumTemperature: 25
   m_maximumTemperature: 200
 --- !u!54 &988964488
